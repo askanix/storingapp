@@ -19,14 +19,14 @@ if(!is_numeric($capaciteit))
     $errors[] = "vul voor de capaciteit een geldig getal in.";
 }
 //prioriteit
-if(isset($_POST['prioriteit']))
-{
-    $prioriteit = true;
-}
-else
-{
-    $prioriteit = false;
-}
+$prioriteit = isset($_POST['prioriteit']);
+// {
+//     $prioriteit = true;
+// }
+// else
+// {
+//     $prioriteit = false;
+// }
 //melder
 $melder = $_POST['melder'];
 if(empty($melder))
@@ -36,9 +36,9 @@ if(empty($melder))
 //overige
 $overige = $_POST['overige'];
 
-if(isset($errors))
+// if(isset($errors))
 {
-    var_dump($errors);
+    var_dump($prioriteit);
     die();
 }
 

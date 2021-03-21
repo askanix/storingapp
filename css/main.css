@@ -139,6 +139,17 @@ table{
     width: 100%;
 }
 
+tr:nth-child(odd){
+  background: #ebebeb;
+}
+tr:first-child{
+  background: #d3d3d3
+}
+
+tr:hover{
+  background: #d3d3d3
+ } 
+
 th{
     text-align: left;
 }
