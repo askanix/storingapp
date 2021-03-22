@@ -30,13 +30,13 @@
 
         <!-- <pre><?php print_r($meldingen) ?></pre> -->
 
-         <?php 
+         <!-- <?php 
         foreach($meldingen as $item)
         
         {
             echo "<p>" . $item['attractie'] . ", type = " . $item['type'] . ", capaciteit = " . $item['capaciteit'] . ", prioriteit = " . $item['prioriteit'] . ", melder = " . $item['melder'] . "</p>";
         }
-        ?>
+        ?> -->
 
         <table>
             <tr>
@@ -45,6 +45,7 @@
                 <th>capaciteit</th>
                 <th>prioriteit</th>
                 <th>melder</th>
+                <th>aanpassen</th>
             </tr>
         
 
@@ -55,6 +56,7 @@
             <td><?php echo $melding['capaciteit']; ?></td>
             <td><?php echo $melding['prioriteit']; ?></td>
             <td><?php echo $melding['melder']; ?></td>
+            <td><a href="edit.php">aanpassen</a></td>
         </tr>
         <?php endforeach; ?>
 
