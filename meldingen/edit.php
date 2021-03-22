@@ -15,24 +15,24 @@
 
         <?php
         //Haal het id uit de URL:
-        $id = //...............;
+        $id = $_GET['id'];
 
         //1. Haal de verbinding erbij
-        //...........
+        require_once '../backend/conn.php';
 
         //2. Query, vul deze aan met een WHERE zodat je alleen de melding met dit id ophaalt
-        //...........
+        $query = "SELECT * FROM meldingen WHERE id= :id";
 
         //3. Van query naar statement
         $statement = $conn->prepare($query);
 
         //4. Voer de query uit, voeg hier nog de placeholder toe
         $statement->execute([
-            //................
+            ":id" => $id
         ]);
 
         //5. Ophalen gegevens, tip: gebruik hier fetch().
-        $melding = //...............;
+        $melding = $statement->fetch(PDO::FETCH_ASSOC);
         ?>
 
         <form action="........." method="POST">
