@@ -32,7 +32,7 @@
         ]);
 
         //5. Ophalen gegevens, tip: gebruik hier fetch().
-        $melding = //...............
+        $melding = //...............;
         ?>
 
         <form action="........." method="POST">
