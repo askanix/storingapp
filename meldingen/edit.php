@@ -35,8 +35,12 @@
         $melding = $statement->fetch(PDO::FETCH_ASSOC);
         ?>
 
-        <form action="........." method="POST">
+        <form action="../backend/medlingenController.php" method="POST">
             <!-- (voeg hier opdracht 7 toe) -->
+
+            <input  type="hidden" name="action" value="update";
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+
 
             <div class="form-group">
                 <label>Naam attractie:</label>
@@ -51,21 +55,27 @@
             <div class="form-group">
                 <label for="prioriteit">Prio:</label>
                 <!-- Let op: de checkbox blijft nu altijd uit, pas dit nog aan -->
-                <input type="checkbox" name="prioriteit" id="prioriteit">
+                <input type="checkbox" name="prioriteit" id="prioriteit" <?php if($melding['prioriteit']) echo 'checked'; ?>>
                 <label for="prioriteit">Melding met prioriteit</label>
             </div>
             <div class="form-group"> 
                 <label for="melder">Naam melder:</label>
                 <!-- Voeg hieronder nog een value-attribuut toe, zoals bij capaciteit -->
-                <input type="text" name="melder" id="melder" class="form-input">
+                <input type="text" name="melder" id="melder" class="form-input" value="<?php echo $melding['melder']; ?>">
             </div>
             <div class="form-group">
                 <label for="overig">Overige info:</label>
-                <textarea name="overig" id="overig" class="form-input" rows="4">.....</textarea>
+                <textarea name="overig" id="overig" class="form-input" rows="4"><?php echo $melding['overige_info']; ?></textarea>
             </div>
             
             <input type="submit" value="Melding opslaan">
 
+        </form>
+        <hr>
+        <form action="../backend/meldingenController.php" method="POST">
+            <input type="hidden" name="action" value="delete">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="submit" value="Verwijderen">
         </form>
     </div>  
 

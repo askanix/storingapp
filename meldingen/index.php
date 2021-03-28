@@ -56,7 +56,7 @@
             <td><?php echo $melding['capaciteit']; ?></td>
             <td><?php echo $melding['prioriteit']; ?></td>
             <td><?php echo $melding['melder']; ?></td>
-             <td><a href="edit.php?id=<?php echo $melding['id']; ?>">aanpassen</a></td>
+            <td><a href="edit.php?id=<?php echo $melding['id']; ?>">aanpassen</a></td>
         </tr>
         <?php endforeach; ?>
 
